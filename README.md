@@ -26,3 +26,8 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/RockPaperScissors.ts
 ```
+
+
+## Todo
+1. Add fund recovery incase a player does not take turn or not reveale
+2. Make contract reusable for more than one game

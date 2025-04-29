@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.28;
+pragma solidity ^0.8.26;
+
+
 
 contract RockPaperScissors {
     enum Choice { Pending, Rock, Paper, Scissors }
@@ -12,6 +14,12 @@ contract RockPaperScissors {
     event GameFinished(address indexed winner, uint256 prize);
 
 
+
+
+    // Commit-Reveal scheme 
+    // hash of my answer along with a random seed value
+    // hash(answer, password) = 0xb9cc137fe7bc6a7b9813633d9cb1969bb79973f8316735246ad707ad0322a51d
+    // Once both players have gone we will then reveale both answers
 
     constructor(bytes32 _player1Hash) payable {
         require(msg.value > 0, "Entry fee must be greater than 0");
